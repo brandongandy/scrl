@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A2F41AB-CF53-4F80-AD80-6632285E03AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCRL</RootNamespace>
+    <AssemblyName>SCRL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SCRL.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="C64.font">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cheepicus12.font">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="IBM.font">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.WindowsDX.3.6.0.1625\lib\net40\MonoGame.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RogueSharp, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RogueSharp.4.0.0-pre\lib\portable-net40+sl50+win+wpa81+wp80\RogueSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SadConsole, Version=6.4.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SadConsole.6.4.11\lib\net\SadConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\StandardMoveAndAttack.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="Entities\Actor.cs" />
+    <Compile Include="Entities\NonPlayerCharacter.cs" />
+    <Compile Include="Entities\SmallOrc.cs" />
+    <Compile Include="Entities\Monster.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Interfaces\IBehavior.cs" />
+    <Compile Include="Interfaces\IConsoleMetadata.cs" />
+    <Compile Include="Interfaces\ISchedulable.cs" />
+    <Compile Include="MapObjects\Door.cs" />
+    <Compile Include="Mapping\BSPGen.cs" />
+    <Compile Include="Mapping\FieldOfView.cs" />
+    <Compile Include="Mapping\Map.cs" />
+    <Compile Include="Mapping\BasicRoomGen.cs" />
+    <Compile Include="Mapping\RandomWalkGen.cs" />
+    <Compile Include="MapObjects\Direction.cs" />
+    <Compile Include="MapObjects\Floor.cs" />
+    <Compile Include="MapObjects\RoomBase.cs" />
+    <Compile Include="Interfaces\ITile.cs" />
+    <Compile Include="MapObjects\Tile.cs" />
+    <Compile Include="MapObjects\Wall.cs" />
+    <Compile Include="Mapping\TestMap.cs" />
+    <Compile Include="program.cs" />
+    <Compile Include="Resources\Palette.cs" />
+    <Compile Include="Resources\Rand.cs" />
+    <Compile Include="Screens\Adventure.cs" />
+    <Compile Include="Screens\BeltConsole.cs" />
+    <Compile Include="Screens\ConversationConsole.cs" />
+    <Compile Include="Screens\Dungeon.cs" />
+    <Compile Include="Screens\InventoryConsole.cs" />
+    <Compile Include="Screens\MessageLogConsole.cs" />
+    <Compile Include="Systems\CommandSystem.cs" />
+    <Compile Include="Systems\MessageLog.cs" />
+    <Compile Include="Systems\Path.cs" />
+    <Compile Include="Systems\PathFinder.cs" />
+    <Compile Include="Systems\SchedulingSystem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cheepicus_12x12.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IBM8x16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Yayo_c64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCORLIB\SCORLIB.csproj">
+      <Project>{b7dbbce7-d3b1-41f7-b3b7-864db9dc103e}</Project>
+      <Name>SCORLIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+﻿name	level	levelreq	value	location	armortype	minac	maxac	class	unique	invwidth	invheight
+Cap	1		100	0	hat	3	5		0	2	2
+Mask	1		100	0	hat	9	27		0	2	2
+Quilted_Armor	1		100	3	chest	8	11		0	2	3
+Splint_Mail	1		100	3	chest	90	95		0	2	3
+Buckler	1		100	5	shield	4	6		0	2	2
+Small_Shield	1		100	5	shield	8	10		0	2	3
+Gloves	1		100	4	gloves	2	3		0	2	2
+Gaunlets	1		100	4	shoes	12	15		0	2	2
+Leather_Boots	1		100	9	shoes	2	3		0	2	2
+Plate_Boots	1		100	9	shoes	12	15		0	2	2
+Sash	1		100	7	belt	2	2		0	2	1
+Heavy_Belt	1		100	7	belt	6	6		0	2	1

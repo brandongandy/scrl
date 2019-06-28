@@ -1,0 +1,2 @@
+﻿deityid	deityname	aspect1	aspect2	aspect3
+0	none	0	0	0

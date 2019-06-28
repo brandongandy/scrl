@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7DBBCE7-D3B1-41F7-B3B7-864DB9DC103E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCORLIB</RootNamespace>
+    <AssemblyName>SCORLIB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LumenWorks.Framework.IO, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorksCsvReader.4.0.0\lib\net45\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActorClasses\Actor.cs" />
+    <Compile Include="ActorClasses\Deity.cs" />
+    <Compile Include="ActorInterfaces\IDeity.cs" />
+    <Compile Include="ActorInterfaces\IFaction.cs" />
+    <Compile Include="ActorInterfaces\IMonster.cs" />
+    <Compile Include="ActorInterfaces\INonPlayerCharacter.cs" />
+    <Compile Include="ActorInterfaces\IPlayer.cs" />
+    <Compile Include="ArmorFactory.cs" />
+    <Compile Include="AttributePair.cs" />
+    <Compile Include="ActorInterfaces\IActor.cs" />
+    <Compile Include="ConversationClasses\Conversation.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="ItemClasses\Affix.cs" />
+    <Compile Include="ItemClasses\Armor.cs" />
+    <Compile Include="ItemClasses\ConsumableBase.cs" />
+    <Compile Include="ItemClasses\EquipmentBase.cs" />
+    <Compile Include="ItemClasses\Inventory.cs" />
+    <Compile Include="ItemClasses\ItemBase.cs" />
+    <Compile Include="ItemClasses\TreasureClass.cs" />
+    <Compile Include="ItemClasses\Weapon.cs" />
+    <Compile Include="ItemInterfaces\IAffix.cs" />
+    <Compile Include="ItemInterfaces\IArmor.cs" />
+    <Compile Include="ActorInterfaces\ICharacterClass.cs" />
+    <Compile Include="ItemInterfaces\ICloneable.cs" />
+    <Compile Include="ItemInterfaces\IConsumable.cs" />
+    <Compile Include="ItemInterfaces\IEquipment.cs" />
+    <Compile Include="ItemInterfaces\IItem.cs" />
+    <Compile Include="ItemInterfaces\IWeapon.cs" />
+    <Compile Include="Modifier.cs" />
+    <Compile Include="MonsterFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestClasses\Quest.cs" />
+    <Compile Include="QuestFactory.cs" />
+    <Compile Include="Systems\Pool.cs" />
+    <Compile Include="Systems\Random.cs" />
+    <Compile Include="Systems\StringUtils.cs" />
+    <Compile Include="TreasureFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Armor.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Aspect.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\MagicPrefix.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\MagicSuffix.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\MonStats.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\MonStats2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\ReadMe.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Deity.txt" />
+    <Content Include="Content\TreasureClass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Weapon.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

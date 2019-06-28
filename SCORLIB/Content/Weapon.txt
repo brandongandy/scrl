@@ -1,0 +1,4 @@
+﻿name	mindam	maxdam	wclass	lvl	cltype	value	hands
+Wrist_Sword	19	44	ht1	1	fighter	20	1
+Ogre_Axe	28	145	stf	2	fighter	50	2
+Blade_Bow	21	43	bow	2	thief	50	2

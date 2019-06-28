@@ -1,0 +1,2 @@
+﻿nameid	baseforeground	basebackground	glyph
+orc1	Palette.TahitiGold	Palette.LightFloorForeground	o'
